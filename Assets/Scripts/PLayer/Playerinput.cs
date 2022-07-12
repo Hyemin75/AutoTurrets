@@ -26,8 +26,6 @@ public class Playerinput : MonoBehaviour
         //Left = Input.GetKey(KeyCode.LeftArrow) || //Input.GetKey(KeyCode.A); ;
         //Right = Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D); ;
 
-
-
    
     }
 }

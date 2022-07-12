@@ -5,41 +5,41 @@ using UnityEngine;
 public class BulletSpwaner : MonoBehaviour
 {
    
-    private float timer = 0f;
-
-    // Start is called before the first frame update
-
+    public float rotSpeed = 100.0f;
+    
     public GameObject BulletPrefab;
     public Transform Player;
-
-    private float randomFire = 0.0f;
-    // Update is called once per frame
+    public Targetting targetting;
 
     private void Start()
     {
-        randomFire = Random.Range(0.5f, 3f);
+        targetting = GetComponent<Targetting>();
     }
 
     void Update()
+    {
+
+        if (targetting.GetCheckTrigger())
         {
-
-
-
-            timer += Time.deltaTime;
-
-            if (timer > randomFire)
-            {
-                timer = 0;
-            
-            randomFire = Random.Range(0.5f, 2f);
-
-            GameObject bullet = Instantiate(BulletPrefab, transform) ;
-            bullet.transform.LookAt(Player);
-            }
-    
+            OnFire();
         }
-        
-    
+        else
+        {
+            OffFire();
+        }
 
+    }
+     
+
+    void OnFire()
+    {
+        transform.LookAt(Player);
+    }
+
+    void OffFire()
+    {
+        //계속 회전해야 함
+        transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));
+    }
 
 }
