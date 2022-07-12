@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 451560320492937066}
   - component: {fileID: 451560320492937065}
   - component: {fileID: 451560320492937077}
+  - component: {fileID: 1580661001}
   m_Layer: 0
   m_Name: BulletSpawner
   m_TagString: Untagged
@@ -116,6 +117,19 @@ MonoBehaviour:
   BulletPrefab: {fileID: 691621216009475444, guid: b16231cbe482e01419f9eebedf11853b, type: 3}
   Player: {fileID: 0}
   targetting: {fileID: 0}
+--- !u!114 &1580661001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451560320492937064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8abb0a8138447c4e9b0891821a72fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
 --- !u!1 &8996454355006947999
 GameObject:
   m_ObjectHideFlags: 0

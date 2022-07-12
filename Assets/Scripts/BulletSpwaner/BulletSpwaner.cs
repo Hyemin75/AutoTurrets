@@ -14,7 +14,10 @@ public class BulletSpwaner : MonoBehaviour
     private void Start()
     {
         targetting = GetComponent<Targetting>();
+
     }
+
+
 
     void Update()
     {
@@ -34,6 +37,10 @@ public class BulletSpwaner : MonoBehaviour
     void OnFire()
     {
         transform.LookAt(Player);
+        GameObject bullet = Instantiate(BulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+        bullet.transform.LookAt(Player);
+
+
     }
 
     void OffFire()

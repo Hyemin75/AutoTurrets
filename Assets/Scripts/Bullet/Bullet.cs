@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
 
     public float bulletSpeed = 0.1f;
 
-    private float randomFire = 0.0f;
+    //private float randomFire = 0.0f;
 
     private void Start()
     {
@@ -16,8 +16,8 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        randomFire = Random.Range(0.5f, 2f);
-        transform.Translate(0f, 0f, bulletSpeed * Time.deltaTime);
+        //randomFire = Random.Range(0.5f, 2f);
+        transform.Translate(0f, 0f, bulletSpeed);
     }
 
     void OnTriggerEnter(Collider other)
