@@ -6,7 +6,8 @@ public class BulletSpwaner : MonoBehaviour
 {
    
     public float rotSpeed = 100.0f;
-    
+    private float randomFire;
+    private float timeOfSpawnBullet;
     public GameObject BulletPrefab;
     public Transform Player;
     public Targetting targetting;
@@ -14,13 +15,14 @@ public class BulletSpwaner : MonoBehaviour
     private void Start()
     {
         targetting = GetComponent<Targetting>();
-
+        randomFire = Random.Range(0.5f, 2f);
     }
 
 
 
     void Update()
     {
+        timeOfSpawnBullet += Time.deltaTime;
 
         if (targetting.GetCheckTrigger())
         {
@@ -37,10 +39,13 @@ public class BulletSpwaner : MonoBehaviour
     void OnFire()
     {
         transform.LookAt(Player);
-        GameObject bullet = Instantiate(BulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-        bullet.transform.LookAt(Player);
 
-
+        if (timeOfSpawnBullet > randomFire)
+        {
+            GameObject bullet = Instantiate(BulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+            bullet.transform.LookAt(Player);
+            timeOfSpawnBullet = 0;
+        }
     }
 
     void OffFire()
