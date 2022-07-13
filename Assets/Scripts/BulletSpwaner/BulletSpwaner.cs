@@ -41,7 +41,7 @@ public class BulletSpwaner : MonoBehaviour
 
         if (timeOfSpawnBullet > randomFire)
         {
-            GameObject bullet = Instantiate(BulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+            GameObject bullet = Instantiate(BulletPrefab, transform.position, Quaternion.identity);
             bullet.transform.LookAt(Player);
             timeOfSpawnBullet = 0;
         }
