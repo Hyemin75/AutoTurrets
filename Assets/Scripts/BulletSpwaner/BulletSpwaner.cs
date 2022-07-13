@@ -5,20 +5,20 @@ using UnityEngine;
 public class BulletSpwaner : MonoBehaviour
 {
    
-    public float rotSpeed = 100.0f;
     private float randomFire;
     private float timeOfSpawnBullet;
-    public GameObject BulletPrefab;
-    public Transform Player;
-    public Targetting targetting;
 
+    public float rotSpeed = 100.0f;
+    
+    public Transform Player;
+    public GameObject BulletPrefab;
+    public Targetting targetting;
+    
     private void Start()
     {
         targetting = GetComponent<Targetting>();
         randomFire = Random.Range(0.5f, 2f);
     }
-
-
 
     void Update()
     {
@@ -34,7 +34,6 @@ public class BulletSpwaner : MonoBehaviour
         }
 
     }
-     
 
     void OnFire()
     {
@@ -50,7 +49,6 @@ public class BulletSpwaner : MonoBehaviour
 
     void OffFire()
     {
-        //계속 회전해야 함
         transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));
     }
 

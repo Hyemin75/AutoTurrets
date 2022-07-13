@@ -288,6 +288,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1580661001, guid: cb6f37e9616e27f498ff1b04cba7e5f7, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1482659939}
     - target: {fileID: 451560320492937064, guid: cb6f37e9616e27f498ff1b04cba7e5f7, type: 3}
       propertyPath: m_Name
       value: BulletSpawner (1)

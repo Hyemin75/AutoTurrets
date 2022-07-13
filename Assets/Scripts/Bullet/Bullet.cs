@@ -7,8 +7,6 @@ public class Bullet : MonoBehaviour
 
     public float bulletSpeed = 0.1f;
 
-    
-
     private void Start()
     {
         Destroy(gameObject, 3f);
@@ -25,9 +23,6 @@ public class Bullet : MonoBehaviour
         PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
       
         other.GetComponent<PlayerHealth>()?.Die();
-
-        //?. 연산자
-        //(expression)?. : expression이 null이 아니면 맴버에 접근함
 
     }
 }
