@@ -12,19 +12,19 @@ public class BulletSpwaner : MonoBehaviour
     
     public Transform Player;
     public GameObject BulletPrefab;
-    public Targetting targetting;
-    
+    public Sensor sensor;
+
     private void Start()
     {
-        targetting = GetComponent<Targetting>();
         randomFire = Random.Range(0.5f, 2f);
+        sensor = GetComponent<Sensor>();
     }
 
     void Update()
     {
         timeOfSpawnBullet += Time.deltaTime;
 
-        if (targetting.GetCheckTrigger())
+        if (sensor.GetCheckPlayer() == false)
         {
             OnFire();
         }
